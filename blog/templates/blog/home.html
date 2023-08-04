@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-center">Welcome to our Home Page</h1>
+
+  <div class="d-grid gap-2 col-6 mx-auto mt-3">
+    <a href="{% url 'create' %}" class="btn btn-success">Create Blog</a>
+  </div>
+
+  <div class="mt-5">
+    {% for blog in blogs %}
+    <h2>{{ blog.title }}</h2>
+    <p>{{ blog.description }}</p>
+    <a href="{% url 'edit-blog' pk=blog.pk %}" class="btn btn-primary">Edit</a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+
+
