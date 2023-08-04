@@ -84,3 +84,4 @@ class SignUpView(FormView):
         context['form'] = self.form_class()
         return context
     
+
